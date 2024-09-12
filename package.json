@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "three": "^0.168.0",
+    "three-mesh-ui": "^6.5.4"
+  },
+  "devDependencies": {
+    "vite": "^5.4.4"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build"
+  }
+}
