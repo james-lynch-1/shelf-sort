@@ -1,17 +1,17 @@
 import * as THREE from "three";
 import {
-  CSS2DObject,
-  CSS2DRenderer,
+    CSS2DObject,
+    CSS2DRenderer,
 } from "three/addons/renderers/CSS2DRenderer.js";
 
 // const textRenderer = new CSS2DRenderer();
 // textRenderer.render();
 
 const camera = new THREE.PerspectiveCamera(
-  45,
-  window.innerWidth / window.innerHeight,
-  1,
-  500,
+    45,
+    window.innerWidth / window.innerHeight,
+    1,
+    500,
 );
 camera.position.set(0, 0, 100);
 camera.lookAt(0, 0, 0);
@@ -21,7 +21,7 @@ const scene = new THREE.Scene();
 //create a blue LineBasicMaterial
 const material = new THREE.LineBasicMaterial({ color: 0x0000ff });
 
-const points = [];
+const points: Array<THREE.Vector3> = [];
 points.push(new THREE.Vector3(-10, 0, 0));
 points.push(new THREE.Vector3(0, 10, 0));
 points.push(new THREE.Vector3(10, 0, 0));

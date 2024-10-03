@@ -1,3 +1,4 @@
 /node_modules
+/.cert
 index.html:Zone.Identifier
 main.js:Zone.Identifier
