@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="tailwindmain.css" />
         <meta charset="utf-8" />
         <title>ShelfSort</title>
         <style>
@@ -11,6 +11,22 @@
         </style>
     </head>
     <body>
-        <script type="module" src="/main.tsx"></script>
+        <script type="module" src="/main2.tsx"></script>
+        <video id="video" autoplay></video>
+        <canvas id="takePhotoCanvas"></canvas>
+        <div id='results'>
+            <div>
+              <video autoplay></video>
+              <button id='getUserMediaButton'>Get User Media</button>
+            </div>
+            <div>
+              <canvas id='grabFrameCanvas'></canvas>
+              <button id='grabFrameButton' disabled>Grab Frame</button>
+            </div>
+            <div>
+              <canvas id='takePhotoCanvas'></canvas>
+              <button id='takePhotoButton' disabled>Take Photo</button>
+            </div>
+          </div>
     </body>
 </html>
