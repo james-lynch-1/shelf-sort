@@ -1,17 +1,15 @@
 {
   "dependencies": {
-    "@tensorflow-models/coco-ssd": "^2.2.3",
-    "@types/tailwindcss": "^3.0.11",
     "@types/w3c-image-capture": "^1.0.10",
-    "@types/webxr": "^0.5.20",
+    "inferencejs": "^1.0.15",
     "three": "^0.169.0",
     "three-mesh-ui": "^6.5.4",
     "typescript": "^5.6.2"
   },
   "devDependencies": {
+    "@types/node": "^22.7.6",
     "@types/three": "^0.169.0",
     "binpackingjs": "^3.0.2",
-    "tailwindcss": "^3.4.13",
     "vite": "^5.4.4"
   },
   "scripts": {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="tailwindmain.css" />
+        <link rel="stylesheet" href="main.css" />
         <meta charset="utf-8" />
         <title>ShelfSort</title>
         <style>
@@ -11,22 +11,71 @@
         </style>
     </head>
     <body>
-        <script type="module" src="/main2.tsx"></script>
+        <script type="module" src="/main.tsx"></script>
+        <div id="tutorialDiv">
+            <span>Facing the shelf directly, take a photo.</span>
+        </div>
+        <div id="spinnerDiv">
+            <img id="spinner" src="arrow-repeat.svg" class="animate-spin" />
+        </div>
+        <div id="pinchDiv" width="100%" height="100%"></div>
         <video id="video" autoplay></video>
         <canvas id="takePhotoCanvas"></canvas>
-        <div id='results'>
-            <div>
-              <video autoplay></video>
-              <button id='getUserMediaButton'>Get User Media</button>
-            </div>
-            <div>
-              <canvas id='grabFrameCanvas'></canvas>
-              <button id='grabFrameButton' disabled>Grab Frame</button>
-            </div>
-            <div>
-              <canvas id='takePhotoCanvas'></canvas>
-              <button id='takePhotoButton' disabled>Take Photo</button>
-            </div>
-          </div>
+        <canvas id="drawingCanvas"></canvas>
+        <canvas id="shelfCanvas"></canvas>
+        <img id="circle0" class="circle" src="/circle.svg" />
+        <img id="circle1" class="circle" src="/circle.svg" />
+        <div id="sliderDivXR">
+            <span id="sliderTextXR">Depth</span>
+            <img id="circleXR" class="circle" src="/circle.svg" width="50" height="50" />
+            <div id="sliderLineXR"></div>
+        </div>
+        <!-- <button class="button" id="fullscreenButton">
+            <img src="/fullscreen.svg" />
+        </button> -->
+        <button class="button" id="takePhotoButton">
+            <img src="/camera.svg" />
+        </button>
+        <button class="button" id="backButton">
+            <img src="/arrow-counterclockwise.svg" />
+            <span>Retry</span>
+        </button>
+        <button class="button" id="nextButton">
+            <span>Next</span>
+            <img src="/arrow-right.svg" />
+        </button>
+        <button class="button" id="placeShelfButtonXR">
+            <img src="/bookshelf.svg" />
+            <span>Place</span>
+        </button>
+        <button class="button" id="backButtonXR">
+            <img src="/book-half-left.svg" />
+            <span>Back</span>
+        </button>
+        <button class="button" id="farBackButtonXR">
+            <img src="/chevron-double-left.svg" />
+        </button>
+        <button class="button" id="retryButtonXR">
+            <img src="/bookshelf.svg" />
+            <span>Pick Up</span>
+        </button>
+        <button class="button" id="nextButtonXR">
+            <span>Next</span>
+            <img src="/book-half-left.svg" />
+        </button>
+        <button class="button" id="farNextButtonXR">
+            <img src="/chevron-double-right.svg" />
+        </button>
+        <p id="tutorialText"></p>
+        <div id="pinchTutorialDiv">
+            <img id="arrowDownLeft" src="arrow-down-left.svg" />
+            <span>Pinch to adjust size</span>
+            <img id="arrowUpRight" src="arrow-up-right.svg" />
+        </div>
+        <p id="indicatorText"></p>
+        <div id="spinnerDivXR">
+            <img id="spinner" src="arrow-repeat.svg" />
+        </div>
+        <div id="booksDiv"></div>
     </body>
 </html>
