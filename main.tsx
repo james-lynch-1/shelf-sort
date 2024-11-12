@@ -111,13 +111,7 @@ function init() {
         while (sortedBooksPlaced > 0) onBackButtonXRClick(e);
     });
     placeShelfButtonXR.addEventListener("click", placeShelfXR);
-    // placeShelfButtonXR.addEventListener("beforexrselect", (e) => {
-    //     e.preventDefault();
-    // });
     retryButtonXR.addEventListener("click", onRetryButtonXRClick);
-    // retryButtonXR.addEventListener("beforexrselect", (e) => {
-    //     e.preventDefault();
-    // });
     nextButtonXR.addEventListener("click", onNextButtonXRClick);
     farNextButtonXR.addEventListener("click", (e) => {
         e.preventDefault();
@@ -171,7 +165,6 @@ renderer.xr.addEventListener("sessionstart", async () => {
         for (let i = divs.length - 1; i != 0; i--) {
             if (divs[i].children && divs[i].children[0].tagName == "svg") {
                 overlayDiv = divs[i];
-                console.log(overlayDiv);
                 break;
             }
         }
@@ -235,7 +228,6 @@ function drawShelfXR(shelfGroup: THREE.Group<THREE.Object3DEventMap>) {
     shelfGroup.add(new THREE.AxesHelper());
     generateBookMeshes(shelfGroup);
     scene.add(shelfGroup);
-    console.log(shelfGroup.children);
 }
 
 function placeShelfXR() {
@@ -297,9 +289,8 @@ function generateBookMeshes(shelfGroup: THREE.Group) {
             ),
         };
         placeBookXR(shelfMesh, bookMesh, bookCanvasPosition, bookCanvasSize);
-        console.log(bookMesh.name + " " + JSON.stringify(bookMesh.userData));
     }
-    console.table(placedOrderMap);
+    // console.table(placedOrderMap);
 }
 
 function placeBookXR( // takes top-left point coords
@@ -523,17 +514,6 @@ function getUserMedia() {
             window.onfocus = reloadPage;
         });
 }
-
-// function onFullscreenButtonClick() {
-//     let img = fullscreenButton.childNodes[0] as HTMLImageElement;
-//     if (!document.fullscreenElement) {
-//         document.documentElement.requestFullscreen();
-//         img.src = "/fullscreen-exit.svg";
-//     } else {
-//         document.exitFullscreen();
-//         img.src = "/fullscreen.svg";
-//     }
-// }
 
 function onTakePhotoButtonClick() {
     tutorialDiv.style.display = "none";
@@ -895,7 +875,7 @@ async function imageRec() {
     const configuration = { scoreThreshold: 0.3, iouThreshold: 0.3, maxNumBoxes: 70 };
     const predictions = await inferEngine.infer(workerId, img, configuration);
     img.close();
-    console.table(predictions);
+    // console.table(predictions);
     return predictions;
     // scales longest dimension to 640px
 }
