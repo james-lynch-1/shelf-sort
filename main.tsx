@@ -561,6 +561,8 @@ async function onNextButtonClick() {
     cropToSelection(rectX, rectY, rectWidth, rectHeight);
     spinnerDiv.style.display = "inline";
     tutorialDiv.style.display = "none";
+    nextButton.style.display = "none";
+    backButton.style.display = "none";
     startButton.click();
 }
 
@@ -672,6 +674,8 @@ function adjustDepth(circleX, sliderDivXRWidth, sliderDivXRLeft) {
 
 let handleExit = function (e) {
     e.preventDefault();
+    nextButton.style.display = "flex";
+    backButton.style.display = "flex";
     hitTestSourceRequested = false;
     hitTestSource.cancel();
     hitTestSource = null as any;
@@ -987,7 +991,7 @@ function render() {
     }
     shelfGroup.position.set(...baseShelfPosition.toArray());
     let zVector = new THREE.Vector3(0, 0, -1).normalize();
-    shelfGroup.translateOnAxis(zVector, depthSliderPos / 1000);
+    shelfGroup.translateOnAxis(zVector, depthSliderPos / 500);
 
     renderer.render(scene, camera);
 }

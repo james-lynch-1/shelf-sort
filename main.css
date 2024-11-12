@@ -141,11 +141,21 @@ body {
 
 #farBackButtonXR,
 #farNextButtonXR {
-    bottom: 85px;
+    height: 35px;
+    width: 35px;
+    bottom: 60px;
+    left: 9%;
+    transform: translate(-50%, -50px);
+    align-items: center;
+    img {
+        align-self: center;
+        height: auto;
+        margin-top: 0px;
+    }
 }
 
 #farNextButtonXR {
-    left: 85%;
+    left: 91%;
 }
 
 #fullscreenButton {
@@ -168,7 +178,7 @@ body {
     text-align: center;
     border-radius: 5px;
     padding: 3px;
-    bottom: 105px;
+    bottom: 95px;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: white;
