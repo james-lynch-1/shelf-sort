@@ -225,7 +225,7 @@ function drawShelfXR(shelfGroup: THREE.Group<THREE.Object3DEventMap>) {
     let shelfMesh = new THREE.Mesh(shelfGeo, shelfMaterial);
     shelfMesh.name = "shelfMesh";
     shelfGroup.add(shelfMesh);
-    shelfGroup.add(new THREE.AxesHelper());
+    // shelfGroup.add(new THREE.AxesHelper());
     generateBookMeshes(shelfGroup);
     scene.add(shelfGroup);
 }
