@@ -501,13 +501,13 @@ function getUserMedia() {
             document.querySelector("video")!.srcObject = mediaStream;
             const track = mediaStream.getVideoTracks()[0];
             imageCapture = new ImageCapture(track);
+            takePhotoButton.style.display = "inline";
+            tutorialDiv.children[0].innerHTML = "Facing the shelf directly, take a photo.";
             return track;
         })
         .then(() => {
             tutorialDiv.style.display = "inline-block";
             spinnerDiv.style.display = "none";
-            takePhotoButton.style.display = "inline";
-            tutorialDiv.children[0].innerHTML = "Facing the shelf directly, take a photo.";
         })
         .catch((error) => {
             console.log(error);
@@ -876,7 +876,7 @@ function cropToSelection(sx, sy, swidth, sheight) {
 
 async function imageRec() {
     const img = await createImageBitmap(shelfCanvas);
-    const configuration = { scoreThreshold: 0.3, iouThreshold: 0.3, maxNumBoxes: 70 };
+    const configuration = { scoreThreshold: 0.35, iouThreshold: 0.35, maxNumBoxes: 70 };
     const predictions = await inferEngine.infer(workerId, img, configuration);
     img.close();
     // console.table(predictions);
@@ -991,7 +991,7 @@ function render() {
     }
     shelfGroup.position.set(...baseShelfPosition.toArray());
     let zVector = new THREE.Vector3(0, 0, -1).normalize();
-    shelfGroup.translateOnAxis(zVector, depthSliderPos / 500);
+    shelfGroup.translateOnAxis(zVector, depthSliderPos / 200);
 
     renderer.render(scene, camera);
 }
