@@ -876,7 +876,7 @@ function cropToSelection(sx, sy, swidth, sheight) {
 
 async function imageRec() {
     const img = await createImageBitmap(shelfCanvas);
-    const configuration = { scoreThreshold: 0.35, iouThreshold: 0.35, maxNumBoxes: 70 };
+    const configuration = { scoreThreshold: 0.45, iouThreshold: 0.45, maxNumBoxes: 70 };
     const predictions = await inferEngine.infer(workerId, img, configuration);
     img.close();
     // console.table(predictions);
@@ -986,12 +986,11 @@ function render() {
             hitting[0] = true;
         }
         // only run handleStateChangeXR() if hitting status changes
-        if (hitting[0] > hitting[1]) handleStateChangeXR("placingShelf");
-        else if (hitting[0] < hitting[1]) handleStateChangeXR("placingShelf");
+        if (hitting[0] != hitting[1]) handleStateChangeXR("placingShelf");
     }
     shelfGroup.position.set(...baseShelfPosition.toArray());
     let zVector = new THREE.Vector3(0, 0, -1).normalize();
-    shelfGroup.translateOnAxis(zVector, depthSliderPos / 200);
+    shelfGroup.translateOnAxis(zVector, depthSliderPos / 100);
 
     renderer.render(scene, camera);
 }
